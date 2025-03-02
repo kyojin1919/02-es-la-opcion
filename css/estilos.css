@@ -1,0 +1,897 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+/* --- Estilos Generales del Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(120deg, #007BFF, #00C3FF);
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navegación */
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+/* Menú principal */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: yellow;
+}
+
+/* --- Estilos para Móviles (Menú Hamburguesa) --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Cuando la pantalla es pequeña */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        left: 0; /* Hace que el menú se extienda hasta el borde izquierdo */
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%; /* Ocupará todo el ancho para que no se corte */
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-links a {
+        color: white;
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Clase para mostrar el menú cuando se hace clic */
+    .nav-active {
+        display: flex;
+    }
+}
+
+.logo img {
+    height: 80px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 🌟 Hero Section */
+.hero {
+    background: linear-gradient(to right, #002b5c, #00509d);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: #ffffff;
+    color: #002b5c;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #00509d;
+    color: white;
+}
+
+/* 🎞️ Carrusel de Imágenes */
+#carousel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 50px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* 📱 Adaptación a móviles */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* 🎨 Animación de aparición al hacer scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🎨 Efecto hover en el menú */
+nav ul li a {
+    position: relative;
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 📜 Diseño de la sección "Sobre Mí" */
+.sobre-mi {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #002b5c, #00509d);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sobre-mi h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.sobre-mi p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* 📌 Línea de tiempo */
+.linea-tiempo {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.linea-tiempo::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #ffffff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 📍 Evento de la línea de tiempo */
+.evento {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    box-sizing: border-box;
+}
+
+.evento.left {
+    left: 0;
+    text-align: right;
+}
+
+.evento.right {
+    left: 50%;
+    text-align: left;
+}
+
+.evento .contenido {
+    background-color: #fff;
+    color: #002b5c;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.evento .contenido h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.evento .contenido p {
+    font-size: 1.2em;
+}
+
+.evento .contenido img {
+    width: 100%;
+    max-height: 150px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* 🌀 Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 Adaptación a dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .linea-tiempo::after {
+        left: 20px;
+    }
+
+    .evento {
+        width: 100%;
+        padding-left: 60px;
+        text-align: left;
+    }
+
+    .evento.right {
+        left: 0;
+    }
+}
+
+/* 🌀 Animación de aparición al hacer scroll */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🎨 Diseño del apartado de Propuestas */
+.propuestas {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.propuestas h1 {
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.propuestas .intro {
+    font-size: 1.3em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.propuesta {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 6px solid #0066cc;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.propuesta h2 {
+    font-size: 1.8em;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+.propuesta p {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.propuesta ul {
+    list-style: none;
+    padding: 0;
+}
+
+.propuesta ul li {
+    font-size: 1.1em;
+    color: #0066cc;
+    margin: 10px 0;
+    text-align: left;
+}
+
+/* 🌀 Efecto de hover en propuestas */
+.propuesta:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 5px 15px rgba(0, 102, 204, 0.3);
+}
+
+/* 🎭 Animación al aparecer */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🎖️ Diseño del apartado de Logros */
+.logros {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #003366, #0055aa);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logros h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.logros .intro {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.logro-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.completed {
+    background: #0066cc;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2em;
+}
+
+.pending {
+    background: #ffcc00;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 2em;
+    color: #333;
+}
+
+.logro {
+    background: white;
+    color: #003366;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    border-left: 6px solid #0066cc;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logro h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.logro p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* 🌀 Animación al aparecer */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🔥 Efecto al pasar el mouse */
+.logro:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 5px 15px rgba(0, 102, 204, 0.3);
+}
+
+/* 🎨 Diseño del apartado de Cursos y Recursos */
+.cursos, .recursos {
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #001f3f, #004080);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cursos h1, .recursos h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.cursos-container, .recursos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.curso-card, .recurso-card {
+    background: white;
+    color: #001f3f;
+    padding: 20px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.curso-card:hover, .recurso-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 153, 255, 0.3);
+}
+
+/* 🔵 Botones */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #0099ff;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: #0066cc;
+}
+
+/* 🎨 Diseño de la Galería tipo Museo */
+.galeria {
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(to right, #002b5c, #00509d);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.galeria h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.galeria p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* 🖼️ Estilo de Mosaico tipo Panal */
+.galeria-mosaico {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.imagen {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #ffd700; /* Marco dorado */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.imagen img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🖌️ Efecto de galería clásica */
+.imagen:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.5); /* Brillo dorado */
+}
+
+.imagen img:hover {
+    transform: scale(1.05);
+}
+
+/* 🔲 Diseño de mosaico hexagonal */
+.imagen1 { grid-column: span 2; }
+.imagen3 { grid-column: span 2; }
+.imagen5 { grid-column: span 2; }
+
+/* 📱 Diseño adaptable */
+@media (max-width: 768px) {
+    .galeria-mosaico {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-mosaico {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Contenedor principal del formulario */
+.contact-form-container {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Estilos del título */
+.contact-form-container h2 {
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+/* Estilos del formulario */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Campos de entrada */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s ease-in-out;
+}
+
+/* Borde al seleccionar */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botón de enviar */
+.contact-form button {
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background: #0056b3;
+}
+
+/* Estilos de la información de contacto */
+.contact-info {
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de la caja de información */
+.info-box {
+    text-align: left;
+    font-size: 16px;
+}
+
+.info-box p {
+    margin: 8px 0;
+}
+
+/* Logo de la institución */
+.institution-logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.institution-logo img {
+    width: 150px;
+    height: auto;
+}
+
+/* Responsividad */
+@media screen and (max-width: 600px) {
+    .contact-form-container {
+        padding: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .contact-info {
+        padding: 15px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+    }
+
+    .institution-logo img {
+        width: 120px;
+    }
+}
+
+
+/* Estilos generales de la sección de Anuncios */
+.anuncios {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(120deg, #007BFF, #00C3FF); /* Tonos de azul */
+    color: white;
+    border-radius: 10px;
+}
+
+.anuncios h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de los anuncios */
+.anuncios-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos de cada anuncio */
+.anuncio {
+    background: white;
+    color: black;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animación al pasar el cursor sobre el anuncio */
+.anuncio:hover {
+    transform: scale(1.05);
+}
+
+/* Imágenes de los anuncios */
+.anuncio img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para la página de "Próximamente" */
+.coming-soon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #003366, #0077cc, #00aaff);
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.coming-soon-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    width: 80%;
+    max-width: 500px;
+}
+
+.coming-soon h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.coming-soon p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Animación de carga */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    border-top: 5px solid #00aaff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Botón de regreso */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: white;
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00aaff;
+    color: white;
+}
